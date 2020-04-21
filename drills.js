@@ -44,3 +44,20 @@ let hobbitMeals = {
 };
 
 console.log(hobbitMeals.meals[3]);
+
+//create 3-5 objs, with name and jobtitle
+//use whatev
+//store in array
+//iterate over arry to show job title and name
+
+// [a, b, c]
+// [a{}, b{}, c{}]
+let peopleObjects = [
+    {name: 'dude', jobTitle: 'awesome'},
+    {name: 'dudette', jobTitle: 'awesomer'},
+    {name: 'Thomas', jobTitle: 'none'},
+    {name: 'Sherry', jobTitle: 'none'},
+    {name: 'Smaug', jobTitle: 'dragon'}
+];
+
+peopleObjects.forEach((person) => console.log(`${person.name}: ${person.jobTitle}`));
