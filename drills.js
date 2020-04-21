@@ -31,7 +31,7 @@ let objects = {
     spam: 'eggs'
 };
 
-for(const key in objects) {
+for (const key in objects) {
     console.log(`${key} ${objects[key]}`);
 }
 
@@ -40,7 +40,7 @@ for(const key in objects) {
 //console.log(4th meal)
 
 let hobbitMeals = {
-  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+    meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
 };
 
 console.log(hobbitMeals.meals[3]);
@@ -53,11 +53,11 @@ console.log(hobbitMeals.meals[3]);
 // [a, b, c]
 // [a{}, b{}, c{}]
 let peopleObjects = [
-    {name: 'dude', jobTitle: 'awesome'},
-    {name: 'dudette', jobTitle: 'awesomer'},
-    {name: 'Thomas', jobTitle: 'none'},
-    {name: 'Sherry', jobTitle: 'none'},
-    {name: 'Smaug', jobTitle: 'dragon'}
+    { name: 'dude', jobTitle: 'awesome' },
+    { name: 'dudette', jobTitle: 'awesomer' },
+    { name: 'Thomas', jobTitle: 'none' },
+    { name: 'Sherry', jobTitle: 'none' },
+    { name: 'Smaug', jobTitle: 'dragon' }
 ];
 
 peopleObjects.forEach((person) => console.log(`${person.name}: ${person.jobTitle}`));
@@ -67,17 +67,69 @@ peopleObjects.forEach((person) => console.log(`${person.name}: ${person.jobTitle
 // if no boss, "${title} ${name} doesn't report to anybody."
 
 let peopleObjects2 = [
-  {name: 'dude', jobTitle: 'awesome', boss: 'Smaug'},
-  {name: 'dudette', jobTitle: 'awesomer', boss: 'Smaug'},
-  {name: 'Thomas', jobTitle: 'none', boss: 'Smaug'},
-  {name: 'Sherry', jobTitle: 'none', boss: 'Smaug'},
-  {name: 'Smaug', jobTitle: 'dragon'}
+    { name: 'dude', jobTitle: 'awesome', boss: 'Smaug' },
+    { name: 'dudette', jobTitle: 'awesomer', boss: 'Smaug' },
+    { name: 'Thomas', jobTitle: 'none', boss: 'Smaug' },
+    { name: 'Sherry', jobTitle: 'none', boss: 'Smaug' },
+    { name: 'Smaug', jobTitle: 'dragon' }
 ];
 
 peopleObjects2.forEach((person) => {
-  if(person.hasOwnProperty('boss')) {
-  console.log(`${person.jobTitle} ${person.name} reports to ${person.boss}.`);
-  } else {
-    console.log(`${person.jobTitle} ${person.name} doesn't report to anybody.`);
-  }
+    if (person.hasOwnProperty('boss')) {
+        console.log(`${person.jobTitle} ${person.name} reports to ${person.boss}.`);
+    } else {
+        console.log(`${person.jobTitle} ${person.name} doesn't report to anybody.`);
+    }
 });
+
+//redo crack code
+//use object as cipher
+//use key-value as code translator
+//use decodeword fucntion to return a full string out of a bunch of words
+//a: 1
+//b: 2
+//c: 3
+//d: 4
+
+//take word, check the first character '[0]'
+//see if that fits in our object
+//if it does, return index of cipher
+//if not, return a space
+
+let cipher = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4
+};
+
+function decode(word) {
+    let index = word[0];
+    if (cipher.hasOwnProperty(index)) {
+        return word[cipher[index]];
+    } else {
+        return ' ';
+    }
+    
+    /*
+    for(const key in cipher) {
+        if(word[0] === key) {
+            return word[cipher[key]];
+        } else {
+            return ' ';
+        }
+    }*/
+}
+
+function decodeWords(strWords) {
+    let decodedMessage = '';
+    let strArray = strWords.split(' ');
+    strArray.forEach(word => decodedMessage += decode(word));
+    console.log(decodedMessage);
+    //split the string into individual words
+    //decode words in the array
+    //return value
+}
+
+let decodethis = 'craft block argon meter bells brown croon droop';
+decodeWords(decodethis);
