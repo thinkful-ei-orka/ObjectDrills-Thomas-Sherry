@@ -34,3 +34,13 @@ let objects = {
 for(const key in objects) {
     console.log(`${key} ${objects[key]}`);
 }
+
+//object(meals) w/ array of strings
+//'breakfast' 'second breakfast' 'elevenses' 'lunch' 'afternoon tea' 'dinner' 'supper'
+//console.log(4th meal)
+
+let hobbitMeals = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+};
+
+console.log(hobbitMeals.meals[3]);
