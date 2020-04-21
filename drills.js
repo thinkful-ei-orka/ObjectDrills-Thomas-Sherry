@@ -8,13 +8,29 @@
 //call hydration and console.log result
 
 let loaf = {
-  flour: 300,
-  water: 210,
-  hydration: function() {
-    return this.water / this.flour * 100;
-  }
+    flour: 300,
+    water: 210,
+    hydration: function () {
+        return this.water / this.flour * 100;
+    }
 };
 
 console.log(loaf.water);
 console.log(loaf.flour);
 console.log(loaf.hydration());
+
+//obj = five props - foo, bar, fum, quux, spam
+//loop using for in
+//console log each name and value
+
+let objects = {
+    foo: 'fam',
+    bar: 'bim',
+    fum: 42,
+    quux: 'jack',
+    spam: 'eggs'
+};
+
+for(const key in objects) {
+    console.log(`${key} ${objects[key]}`);
+}
